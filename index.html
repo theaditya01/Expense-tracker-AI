@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Expense Tracker AI is a modern personal finance dashboard with AI insights, budgets, forecasting, and expense tracking.">
+  <title>Expense Tracker AI | Smarter Personal Finance</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="landing">
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Expense Tracker AI home">
+        <span class="brand-mark">ET</span>
+        <span>Expense Tracker AI</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">Menu</button>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="expenses.html">Expenses</a>
+        <a href="insights.html">AI Insights</a>
+        <a href="settings.html">Settings</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode">Theme</button>
+        <a class="btn btn-ghost" href="login.html">Login</a>
+        <a class="btn btn-primary" href="signup.html">Get Started</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">AI-powered money clarity</p>
+        <h1>Track expenses, predict spending, and build better financial habits.</h1>
+        <p class="hero-text">A full-stack style frontend prototype for budgeting, receipt scanning, AI categorization, subscriptions, savings goals, and export-ready reports.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-large" href="dashboard.html">Open Dashboard</a>
+          <a class="btn btn-soft btn-large" href="expenses.html">Manage Expenses</a>
+        </div>
+        <div class="trust-row" aria-label="Highlights">
+          <span>LocalStorage persistence</span>
+          <span>Chart.js analytics</span>
+          <span>CSV and PDF exports</span>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="Finance summary preview">
+        <img class="hero-image" src="assets/finance-hero.png" alt="Modern finance dashboard mockup with charts and receipt scanner UI">
+        <div class="glass-card balance-card">
+          <div>
+            <span class="muted">Total Balance</span>
+            <strong data-home-balance>₹0</strong>
+          </div>
+          <span class="status-chip positive">+12.4%</span>
+        </div>
+        <div class="mini-grid">
+          <div class="metric-tile">
+            <span>Income</span>
+            <strong data-home-income>₹0</strong>
+          </div>
+          <div class="metric-tile">
+            <span>Expense</span>
+            <strong data-home-expense>₹0</strong>
+          </div>
+          <div class="metric-tile">
+            <span>Savings</span>
+            <strong data-home-savings>₹0</strong>
+          </div>
+          <div class="metric-tile">
+            <span>Forecast</span>
+            <strong data-home-forecast>₹0</strong>
+          </div>
+        </div>
+        <div class="scan-card">
+          <div class="scan-line"></div>
+          <div>
+            <span class="muted">Receipt AI</span>
+            <strong>Merchant, tax, line items extracted</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="shell feature-grid">
+        <article class="feature-card">
+          <span class="feature-icon">01</span>
+          <h2>Expense CRUD</h2>
+          <p>Add, edit, delete, search, and filter transactions across ten practical categories.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">02</span>
+          <h2>AI Insights</h2>
+          <p>Predict categories, forecast next month, detect overspending, and generate savings suggestions.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">03</span>
+          <h2>Budget Control</h2>
+          <p>Monitor budgets, savings goals, subscriptions, and recurring spending in one place.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">04</span>
+          <h2>Export Ready</h2>
+          <p>Create CSV and PDF summaries for reports, reviews, or personal finance archives.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell split-section">
+      <div>
+        <p class="eyebrow">Built like a product</p>
+        <h2>Responsive, themeable, and ready for a backend.</h2>
+        <p>The prototype keeps state in LocalStorage, uses modular JavaScript controllers, and exposes clear UI states that can later connect to authentication, databases, OCR APIs, and AI services.</p>
+      </div>
+      <div class="check-list" aria-label="Included modules">
+        <span>Landing, login, signup</span>
+        <span>Dashboard with charts</span>
+        <span>Expense manager and OCR UI</span>
+        <span>AI categorization and forecasts</span>
+        <span>Settings, currency, admin stats</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>Designed &amp; Developed by Aditya Kumar | B.Tech CSE 3rd Year</p>
+    </div>
+  </footer>
+
+  <div class="toast-stack" aria-live="polite" aria-atomic="true"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

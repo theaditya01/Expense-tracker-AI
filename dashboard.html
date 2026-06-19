@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Expense Tracker AI dashboard with balances, monthly spending trends, category charts, budgets, savings goals, and admin statistics.">
+  <title>Dashboard | Expense Tracker AI</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="dashboard">
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">ET</span>
+        <span>Expense Tracker AI</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">Menu</button>
+      <div class="nav-links">
+        <a href="dashboard.html" aria-current="page">Dashboard</a>
+        <a href="expenses.html">Expenses</a>
+        <a href="insights.html">AI Insights</a>
+        <a href="settings.html">Settings</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode">Theme</button>
+        <a class="btn btn-ghost" href="login.html">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="app-shell shell">
+    <section class="page-heading">
+      <div>
+        <p class="eyebrow">Dashboard</p>
+        <h1>Financial command center</h1>
+        <p>Live demo analytics from LocalStorage with realistic transactions and budget health.</p>
+      </div>
+      <div class="heading-actions">
+        <button class="btn btn-soft" data-export="csv">Export CSV</button>
+        <button class="btn btn-primary" data-export="pdf">Export PDF</button>
+      </div>
+    </section>
+
+    <section class="metrics-grid" aria-label="Financial summary">
+      <article class="metric-card">
+        <span>Total Balance</span>
+        <strong id="totalBalance">₹0</strong>
+        <small class="positive">Available after monthly expenses</small>
+      </article>
+      <article class="metric-card">
+        <span>Monthly Income</span>
+        <strong id="monthlyIncome">₹0</strong>
+        <small>Salary and freelance income</small>
+      </article>
+      <article class="metric-card">
+        <span>Monthly Expense</span>
+        <strong id="monthlyExpense">₹0</strong>
+        <small class="warning">Updates from expense records</small>
+      </article>
+      <article class="metric-card">
+        <span>Savings</span>
+        <strong id="monthlySavings">₹0</strong>
+        <small class="positive">Current month surplus</small>
+      </article>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel wide">
+        <div class="panel-head">
+          <div>
+            <h2>Monthly Trend</h2>
+            <p>Income, expense, and savings over six months.</p>
+          </div>
+        </div>
+        <div class="chart-wrap"><canvas id="monthlyTrendChart"></canvas></div>
+      </article>
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Category Mix</h2>
+            <p>Expense share by category.</p>
+          </div>
+        </div>
+        <div class="chart-wrap"><canvas id="categoryPieChart"></canvas></div>
+      </article>
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Income vs Expense</h2>
+            <p>Monthly comparison.</p>
+          </div>
+        </div>
+        <div class="chart-wrap"><canvas id="incomeExpenseChart"></canvas></div>
+      </article>
+      <article class="panel wide">
+        <div class="panel-head">
+          <div>
+            <h2>Budget Management</h2>
+            <p>Category budgets with progress alerts.</p>
+          </div>
+          <a class="btn btn-soft" href="settings.html">Edit Budgets</a>
+        </div>
+        <div id="budgetList" class="budget-list"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Savings Goals</h2>
+            <p>Target progress and completion prediction.</p>
+          </div>
+        </div>
+        <div id="goalSummary" class="stack-list"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Admin Dashboard</h2>
+            <p>User statistics and activity.</p>
+          </div>
+        </div>
+        <div class="admin-stats">
+          <div><strong id="adminUsers">0</strong><span>Users</span></div>
+          <div><strong id="adminTransactions">0</strong><span>Transactions</span></div>
+          <div><strong id="adminRetention">0%</strong><span>Retention</span></div>
+        </div>
+        <div class="chart-wrap small"><canvas id="adminChart"></canvas></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>Designed &amp; Developed by Aditya Kumar | B.Tech CSE 3rd Year</p>
+    </div>
+  </footer>
+
+  <div class="toast-stack" aria-live="polite" aria-atomic="true"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

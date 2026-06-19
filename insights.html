@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI categorization, spending forecast, overspending alerts, savings suggestions, and goals in Expense Tracker AI.">
+  <title>AI Insights | Expense Tracker AI</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="insights">
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">ET</span>
+        <span>Expense Tracker AI</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">Menu</button>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="expenses.html">Expenses</a>
+        <a href="insights.html" aria-current="page">AI Insights</a>
+        <a href="settings.html">Settings</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode">Theme</button>
+        <a class="btn btn-ghost" href="login.html">Logout</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="app-shell shell">
+    <section class="page-heading">
+      <div>
+        <p class="eyebrow">AI Insights</p>
+        <h1>Predictions, alerts, and smart suggestions</h1>
+        <p>Rule-based AI prototype logic that is easy to replace with real AI services later.</p>
+      </div>
+    </section>
+
+    <section class="insight-grid">
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>AI Categorization</h2>
+            <p>Predict category from merchant or description.</p>
+          </div>
+        </div>
+        <form id="categorizerForm" class="form-grid">
+          <label>
+            Merchant
+            <input type="text" name="merchant" placeholder="Netflix, Uber, Apollo Pharmacy">
+          </label>
+          <label>
+            Description
+            <textarea name="description" rows="4" placeholder="Monthly streaming subscription"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Predict Category</button>
+        </form>
+        <div id="categoryPrediction" class="prediction-card">
+          <span>Predicted Category</span>
+          <strong>Waiting for input</strong>
+          <small>Confidence will appear after prediction.</small>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Spending Forecast</h2>
+            <p>Next month prediction and risk status.</p>
+          </div>
+        </div>
+        <div class="forecast-card">
+          <span>Next Month Prediction</span>
+          <strong id="forecastAmount">₹0</strong>
+          <p id="forecastNarrative">Analyzing monthly trend...</p>
+        </div>
+        <div id="alertList" class="alert-list"></div>
+      </article>
+
+      <article class="panel wide">
+        <div class="panel-head">
+          <div>
+            <h2>Forecast Trend</h2>
+            <p>Actual expenses with projected month.</p>
+          </div>
+        </div>
+        <div class="chart-wrap"><canvas id="forecastChart"></canvas></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Savings Suggestions</h2>
+            <p>Personalized ideas based on spending mix.</p>
+          </div>
+        </div>
+        <div id="suggestionList" class="stack-list"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Savings Goals Tracker</h2>
+            <p>Target amount and completion prediction.</p>
+          </div>
+        </div>
+        <form id="goalForm" class="form-grid compact-form">
+          <label>
+            Goal Name
+            <input type="text" name="name" placeholder="Laptop Upgrade" required>
+          </label>
+          <div class="form-row">
+            <label>
+              Target
+              <input type="number" name="target" min="1" step="100" required>
+            </label>
+            <label>
+              Saved
+              <input type="number" name="saved" min="0" step="100" required>
+            </label>
+          </div>
+          <button class="btn btn-primary" type="submit">Add Goal</button>
+        </form>
+        <div id="goalsList" class="stack-list"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>Designed &amp; Developed by Aditya Kumar | B.Tech CSE 3rd Year</p>
+    </div>
+  </footer>
+
+  <div class="toast-stack" aria-live="polite" aria-atomic="true"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

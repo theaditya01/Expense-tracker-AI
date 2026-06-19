@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create an Expense Tracker AI demo profile for budgets, AI spending insights, and subscription tracking.">
+  <title>Signup | Expense Tracker AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="signup">
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">ET</span>
+        <span>Expense Tracker AI</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">Menu</button>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="expenses.html">Expenses</a>
+        <a href="insights.html">AI Insights</a>
+        <a href="settings.html">Settings</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode">Theme</button>
+        <a class="btn btn-ghost" href="login.html">Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="auth-layout shell">
+    <section class="auth-copy">
+      <p class="eyebrow">Start fresh</p>
+      <h1>Create a smart finance workspace in seconds.</h1>
+      <p>The signup flow stores a demo profile locally and routes you to the working dashboard.</p>
+      <div class="check-list compact">
+        <span>AI category suggestions</span>
+        <span>Receipt scanner interface</span>
+        <span>Budgets, goals, exports</span>
+      </div>
+    </section>
+
+    <section class="auth-card" aria-labelledby="signup-title">
+      <h2 id="signup-title">Create Account</h2>
+      <form id="signupForm" class="form-grid">
+        <label>
+          Full Name
+          <input type="text" name="name" value="Aditya Kumar" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" value="aditya@example.com" required>
+        </label>
+        <label>
+          Monthly Income
+          <input type="number" name="income" value="95000" min="0" step="100">
+        </label>
+        <label>
+          Preferred Currency
+          <select name="currency">
+            <option value="INR">INR - Indian Rupee</option>
+            <option value="USD">USD - US Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - British Pound</option>
+            <option value="AED">AED - UAE Dirham</option>
+          </select>
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" value="password123" required minlength="6">
+        </label>
+        <button class="btn btn-primary btn-full" type="submit">Create Account</button>
+      </form>
+      <p class="auth-switch">Already registered? <a href="login.html">Login</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>Designed &amp; Developed by Aditya Kumar | B.Tech CSE 3rd Year</p>
+    </div>
+  </footer>
+
+  <div class="toast-stack" aria-live="polite" aria-atomic="true"></div>
+  <script src="app.js"></script>
+</body>
+</html>
